@@ -1,1 +1,15 @@
 .ticks.read{color:#1688e6}.bubble{position:relative}.message-actions{display:none;position:absolute;right:0;top:-25px}.bubble:hover .message-actions{display:flex}.message-actions button{border:1px solid var(--line);border-radius:7px;background:white}.reaction-chip{position:absolute;bottom:-15px;left:8px;padding:3px 7px;border:1px solid var(--line);border-radius:10px;background:white;font-size:10px}.mini-reply{margin:-4px -4px 7px;padding:5px;border-left:3px solid var(--green);background:#fff8;color:var(--muted);font-size:9px}.reply-bar{display:flex;justify-content:space-between;margin:0 18px;padding:9px 12px;border-left:3px solid var(--green);background:white;font-size:10px}.reply-bar button{border:0;background:transparent}.message-image{display:block;max-width:280px;max-height:260px;border-radius:10px}.file-card{color:var(--green-dark);font-size:12px}.bubble audio{max-width:260px}.modal-back,.call-overlay{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:20px;background:#17211dbb;backdrop-filter:blur(5px)}.modal{position:relative;width:min(450px,100%);max-height:90vh;overflow:auto;padding:30px;border-radius:22px;background:white}.modal-close{position:absolute;right:17px;top:14px;border:0;background:transparent;font-size:24px}.modal label{display:flex;flex-direction:column;gap:7px;margin:15px 0;font-size:11px;font-weight:700}.modal input:not([type=checkbox]),.modal textarea,.modal select{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px}.modal textarea{min-height:80px}.modal .primary{width:100%}.danger-button{border:0;background:transparent;color:#c95050}.menu-button{width:100%;padding:13px;border:0;border-bottom:1px solid var(--line);background:white;text-align:left}.call-card{width:min(520px,100%);padding:30px;border-radius:25px;background:#15201c;color:white;text-align:center}.call-card video{width:100%;max-height:50vh;margin:15px 0;border-radius:15px;background:black}.hangup{padding:12px 23px;border:0;border-radius:25px;background:#e84d5b;color:white}
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+.messenger {
+  width: 100%;
+  height: 100dvh;
+  min-height: 100vh;
+}
