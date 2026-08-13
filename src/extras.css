@@ -1,50 +1,16 @@
-/* Make Chatterbox fill the entire browser window */
-html,
-body,
-#app {
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-}
-
-.messenger {
-  position: fixed !important;
-  inset: 0 !important;
-  width: auto !important;
-  height: auto !important;
-  min-height: 0 !important;
-  overflow: hidden !important;
-}
-
-/* Blue read receipts */
-.ticks {
-  margin-left: 4px;
-}
-
 .ticks.read {
   color: #1688e6;
 }
 
-/* Message actions */
 .bubble {
   position: relative;
 }
 
 .message-actions {
-  position: absolute;
-  top: -27px;
-  right: 0;
-  z-index: 3;
   display: none;
-  gap: 3px;
-  padding: 3px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  background: white;
-  box-shadow: 0 4px 15px rgba(23, 65, 51, 0.12);
+  position: absolute;
+  right: 0;
+  top: -25px;
 }
 
 .bubble:hover .message-actions {
@@ -52,140 +18,95 @@ body,
 }
 
 .message-actions button {
-  width: 27px;
-  height: 25px;
-  border: 0;
-  border-radius: 6px;
-  background: transparent;
-  color: #69756f;
-  cursor: pointer;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: white;
 }
 
-.message-actions button:hover {
-  background: var(--soft);
-  color: var(--green);
-}
-
-/* Message reactions */
 .reaction-chip {
   position: absolute;
-  bottom: -16px;
+  bottom: -15px;
   left: 8px;
-  z-index: 2;
   padding: 3px 7px;
   border: 1px solid var(--line);
-  border-radius: 11px;
+  border-radius: 10px;
   background: white;
-  box-shadow: 0 2px 7px rgba(23, 65, 51, 0.08);
   font-size: 10px;
 }
 
-/* Replies */
 .mini-reply {
   margin: -4px -4px 7px;
-  padding: 6px 8px;
+  padding: 5px;
   border-left: 3px solid var(--green);
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.55);
+  background: #fff8;
   color: var(--muted);
   font-size: 9px;
 }
 
 .reply-bar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   margin: 0 18px;
   padding: 9px 12px;
   border-left: 3px solid var(--green);
   background: white;
-  color: var(--muted);
   font-size: 10px;
 }
 
 .reply-bar button {
   border: 0;
   background: transparent;
-  color: var(--muted);
-  font-size: 17px;
-  cursor: pointer;
 }
 
-/* Photos, files and voice messages */
 .message-image {
   display: block;
   max-width: 280px;
   max-height: 260px;
   border-radius: 10px;
-  object-fit: cover;
 }
 
 .file-card {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 9px 11px;
-  border-radius: 9px;
-  background: rgba(255, 255, 255, 0.55);
   color: var(--green-dark);
   font-size: 12px;
-  font-weight: 600;
-  text-decoration: none;
 }
 
 .bubble audio {
-  display: block;
-  width: 260px;
-  max-width: 100%;
+  max-width: 260px;
 }
 
-/* Modal background */
+#modal:empty {
+  display: none;
+}
+
 .modal-back,
 .call-overlay {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 20;
   display: grid;
   place-items: center;
   padding: 20px;
-  background: rgba(23, 33, 29, 0.73);
+  background: #17211dbb;
   backdrop-filter: blur(5px);
 }
 
-/* Profile, settings and group modal */
 .modal {
   position: relative;
   width: min(450px, 100%);
   max-height: 90vh;
-  overflow-y: auto;
+  overflow: auto;
   padding: 30px;
   border-radius: 22px;
   background: white;
-  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.25);
-}
-
-.modal h2 {
-  margin: 0 0 22px;
-  letter-spacing: -0.03em;
 }
 
 .modal-close {
   position: absolute;
-  top: 14px;
   right: 17px;
-  width: 34px;
-  height: 34px;
+  top: 14px;
   border: 0;
-  border-radius: 10px;
   background: transparent;
-  color: #66736e;
   font-size: 24px;
-  cursor: pointer;
-}
-
-.modal-close:hover {
-  background: var(--soft);
-  color: var(--green);
 }
 
 .modal label {
@@ -193,7 +114,6 @@ body,
   flex-direction: column;
   gap: 7px;
   margin: 15px 0;
-  color: #52605a;
   font-size: 11px;
   font-weight: 700;
 }
@@ -205,55 +125,20 @@ body,
   padding: 11px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  outline: none;
-  background: white;
-  color: #17211d;
-}
-
-.modal input:focus,
-.modal textarea:focus,
-.modal select:focus {
-  border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(20, 162, 119, 0.12);
 }
 
 .modal textarea {
   min-height: 80px;
-  resize: vertical;
 }
 
 .modal .primary {
   width: 100%;
-  margin-top: 8px;
 }
 
-/* Profile image */
-.profile-photo {
-  width: 78px;
-  height: 78px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  margin: 0 auto 18px;
-  border-radius: 25px;
-  background: var(--soft);
-  color: var(--green);
-  font-size: 20px;
-  font-weight: 800;
-}
-
-.profile-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Blocking and reporting */
 .danger-button {
   border: 0;
   background: transparent;
   color: #c95050;
-  cursor: pointer;
 }
 
 .menu-button {
@@ -263,18 +148,8 @@ body,
   border-bottom: 1px solid var(--line);
   background: white;
   text-align: left;
-  cursor: pointer;
 }
 
-.menu-button:hover {
-  background: #f8faf9;
-}
-
-.menu-button.danger-button {
-  color: #c95050;
-}
-
-/* Voice and video call screen */
 .call-card {
   width: min(520px, 100%);
   padding: 30px;
@@ -282,16 +157,6 @@ body,
   background: #15201c;
   color: white;
   text-align: center;
-  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.45);
-}
-
-.call-card h2 {
-  margin: 0 0 5px;
-}
-
-.call-card p {
-  margin: 0 0 18px;
-  color: #a9b8b2;
 }
 
 .call-card video {
@@ -300,12 +165,6 @@ body,
   margin: 15px 0;
   border-radius: 15px;
   background: black;
-  object-fit: cover;
-}
-
-.call-card audio {
-  width: 100%;
-  margin: 20px 0;
 }
 
 .hangup {
@@ -314,49 +173,4 @@ body,
   border-radius: 25px;
   background: #e84d5b;
   color: white;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.hangup:hover {
-  background: #cf3d4a;
-}
-
-/* Keep columns and message areas contained */
-.rail,
-.inbox,
-.conversation {
-  height: 100% !important;
-  min-height: 0 !important;
-}
-
-.chat-list,
-.messages {
-  min-height: 0 !important;
-}
-
-/* Mobile adjustments */
-@media (max-width: 720px) {
-  .modal {
-    padding: 24px;
-  }
-
-  .message-image {
-    max-width: 220px;
-  }
-
-  .bubble audio {
-    width: 210px;
-  }
-
-  .message-actions {
-    display: flex;
-    position: static;
-    justify-content: flex-end;
-    margin-top: 5px;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-  }
 }
